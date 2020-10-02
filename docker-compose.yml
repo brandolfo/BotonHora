@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  botonhora:
+    image: ${DOCKER_REGISTRY-}botonhora
+    build:
+      context: .
+      dockerfile: BotonHora/Dockerfile
+
+  botonwebapi:
+    image: ${DOCKER_REGISTRY-}botonwebapi
+    build:
+      context: .
+      dockerfile: BotonWebApi/Dockerfile
+
