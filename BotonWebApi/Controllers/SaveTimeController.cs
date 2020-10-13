@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using BotonWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,15 +29,17 @@ namespace BotonWebApi.Controllers
 
 		// GET api/<SaveTimeController>/5
 		[HttpGet("{id}")]
-		public string Get(int id)
+		public Button Get(Guid id)
 		{
-			return "value";
+			var buttonF = buttondb.Buttons.FirstOrDefault(x => x.Id == id);
+			return buttonF;
 		}
 
 		// POST api/<SaveTimeController>
 		[HttpPost]
 		public void Post([FromBody] string value)
 		{
+
 		}
 
 		// PUT api/<SaveTimeController>/5
