@@ -4,14 +4,16 @@ using BotonWebApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BotonWebApi.Migrations
 {
     [DbContext(typeof(Buttondb))]
-    partial class ButtondbModelSnapshot : ModelSnapshot
+    [Migration("20201013020312_cambio_id_a_GUID")]
+    partial class cambio_id_a_GUID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
