@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
+
 namespace BotonWebApi
 {
     public class Startup
@@ -24,6 +25,7 @@ namespace BotonWebApi
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        //Aqui instanciamos el DbContext
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();

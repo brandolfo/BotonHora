@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using BotonWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -9,36 +10,41 @@ namespace BotonWebApi.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class BotonController : ControllerBase
+	public class SaveTimeController : ControllerBase
 	{
-		// GET: api/<BotonController>
-		[HttpGet]
-		public IEnumerable<string> Get()
+		private readonly Buttondb buttondb;
+		public SaveTimeController(Buttondb buttondb) //constructor
 		{
-			DateTime time = DateTime.Now;
-			return new string[] { "value1", "value2" };
+			this.buttondb = buttondb;
+		}
+		// GET: api/<SaveTimeController>
+		[HttpGet]
+		public IEnumerable<Button> Get()
+		{
+			var buttonList = buttondb.Buttons;
+			return buttonList;
 		}
 
-		// GET api/<BotonController>/5
+		// GET api/<SaveTimeController>/5
 		[HttpGet("{id}")]
 		public string Get(int id)
 		{
 			return "value";
 		}
 
-		// POST api/<BotonController>
+		// POST api/<SaveTimeController>
 		[HttpPost]
 		public void Post([FromBody] string value)
 		{
 		}
 
-		// PUT api/<BotonController>/5
+		// PUT api/<SaveTimeController>/5
 		[HttpPut("{id}")]
 		public void Put(int id, [FromBody] string value)
 		{
 		}
 
-		// DELETE api/<BotonController>/5
+		// DELETE api/<SaveTimeController>/5
 		[HttpDelete("{id}")]
 		public void Delete(int id)
 		{
