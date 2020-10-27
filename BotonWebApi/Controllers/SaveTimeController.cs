@@ -14,7 +14,7 @@ namespace BotonWebApi.Controllers
 	[ApiController]
 	public class SaveTimeController : ControllerBase
 	{
-		private readonly Buttondb buttondb; //inyeccion de dependencia
+		private readonly Buttondb buttondb; //inyeccion de dependencia, "nos traemos la base de datos para poder usarla"
 		public SaveTimeController(Buttondb buttondb) //constructor
 		{
 			this.buttondb = buttondb;
